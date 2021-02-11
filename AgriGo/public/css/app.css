@@ -1,0 +1,124 @@
+body {
+    background-color: lightgray;
+}
+
+a {
+    text-decoration: none;
+}
+
+.flexWrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.conteneurPage {
+    margin: 1em auto;
+    max-width: 800px;
+    width: 95%;
+    font: 18px/1.5 sans-serif;
+}
+
+.conteneurCategorie {
+    width: 796px;
+}
+
+.conteneurSimple {
+    width: 25%;
+    height: 200px;
+}
+
+header {
+    position: absolute;
+    width: 800px;
+    background-color: lightgray;
+    margin-top: -200px;
+}
+
+.conteneurHeader {
+    position: absolute;
+    width: 800px;
+}
+
+.conteneurCatPro {
+    height: 75px;
+    width: 25%;
+}
+
+.dex{
+    margin-top: 175px;
+    background-color: lightblue;
+}
+
+.IMGcategorie{
+    height: 50%;
+    width: 35%;
+}
+
+h1, h2{
+    text-align : center;
+    width: 800px;
+}
+
+h2 {
+    background-color : gray;
+}
+
+.imgTailleStand {
+    height: 100px;
+    width: 100px;
+}
+
+.conteneurVariete{
+    width: 800px;
+    height: auto;
+}
+
+.conteneurInfoVar {
+    width: 25%;
+    height: 225px;
+}
+
+.imgDesc {
+    width : auto;
+    height : 200px;
+}
+
+.textCentre {
+    text-align: center;
+}
+
+.menuAccueil {
+    width: 800px;
+    height: auto;
+    padding-bottom: 30px;
+}
+
+.macarte{
+    display: block;
+}
+
+.navMenu {
+    background-color: dimgrey;
+    border: 2px solid black;
+    text-align: center;
+    width: 24%;
+}
+
+.infoProducteur {
+    width: 49%;
+}
+
+.imgProducteur {
+    max-height: 300px;
+    max-width: 300px;
+}
+
+.imgCentre {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.textGrand {
+    font-size: x-large;
+}

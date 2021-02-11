@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Producteurs{% endblock %}
+
+{% block body %}
+    <div class="conteneurPage">
+        <h2>Voici la liste des producteurs</h2>
+
+        <div class="conteneurCategorie flexWrap">
+            {% for producteur in producteurs %}
+                <div class="conteneurSimple flexWrap">
+                    <a href="http://localhost:9999/profilProducteur/{{ producteur.getId() }}">
+
+                        {% if producteur.getImageProducteur() is not null %}
+                            <div><img class="imgTailleStand" src="{{ asset(producteur.getImageProducteur()) }}" alt="sa photo"></div>
+                        {% endif %}
+
+                        <div class = "textCentre">{{ producteur.getPrenomProducteur() }} {{ producteur.getNomProducteur() }}</div>
+
+                        {% if producteur.getNomMagasin() is not null %}
+                            <div class = "textCentre">{{ producteur.getNomMagasin() }}</div>
+                        {% endif %}
+
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AgriMap{% endblock %}
+
+{% block body %}
+
+    <head>
+        <!-- Bibliothèque Leaflet pour l'intégration de la carte -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+
+        <link rel="stylesheet" href="../../public/css/app.css">
+
+        <title>Agrimap</title>
+    </head>
+
+    <body>
+        <h1>Agrimap</h1>
+        <!-- Emplacement de la carte avec des éléments de style car le CSS ne veut pas fonctionner -->
+        <div id="macarte" style="width:1000px; height:490px; display: block; margin-left: auto; margin-right: auto"></div>
+
+        <script>
+            <!-- Empalcement et zoom de base de la carte -->
+            var carte = L.map('macarte').setView([46.158051, -1.153400], 11);
+            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(carte);
+
+            <!-- Ajouts de points pour marquer les producteurs -->
+            var marker = L.marker([46.131896, -1.043874]).addTo(carte);
+            marker.bindPopup("<b>L'père Jacky</b><br>6 grande rue de la chassagne<br>17220 La Jarne").openPopup();
+            var marker = L.marker([46.158503, -1.016028]).addTo(carte);
+            marker.bindPopup("<b>Michel Paulnaraif </b><br>56 grande rue<br>17220 Montroy").openPopup();
+            var marker = L.marker([46.150067, -1.040421]).addTo(carte);
+            marker.bindPopup("<b>Matt Paukeaurra</b><br>1 Chemin de Pommerou<br>17220 Clavette").openPopup();
+
+        </script>
+    </body>
+{% endblock %}

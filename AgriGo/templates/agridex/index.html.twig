@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AgriDex{% endblock %}
+
+{% block body %}
+
+<div class="conteneurPage">
+    <header>
+        <h1>AgriDex</h1>
+        <div class="conteneurHeader flexWrap">
+            <div class="conteneurCatPro">
+                <a href="#legumes">
+                    <div><img class="IMGcategorie imgCentre" src="{{ asset('img/Legume.png') }}" alt="image categorie legume"></div>
+                    <div class="textCentre">Légumes</div>
+                </a>
+            </div>
+            <div class="conteneurCatPro">
+                <a href="#fruits">
+                    <div><img class="IMGcategorie imgCentre" src="{{ asset('img/fruit.png') }}" alt="image categorie fruits"></div>
+                    <div class="textCentre">Fruits</div>
+                </a>
+            </div>
+            <div class="conteneurCatPro">
+                <a href="#feculents">
+                    <div><img class="IMGcategorie imgCentre" src="{{ asset('img/feculent.png') }}" alt="image categorie féculents"></div>
+                    <div class="textCentre">Féculents</div>
+                </a>
+            </div>
+            <div class="conteneurCatPro">
+                <a href="#autres">
+                    <div><img class="IMGcategorie imgCentre" src="{{ asset('img/oeuf.png') }}" alt="image categorie Autres"></div>
+                    <div class="textCentre">Autres</div>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="dex">
+        <h2 id="legumes">Legume</h2>
+        <div class="conteneurCategorie flexWrap">
+            {% for prd in Legume %}
+                <div class="conteneurSimple flexWrap">
+                    <a href="http://localhost:9999/description/{{ prd.getTypeProduit() }}">
+                        <div><img class="imgTailleStand" src="{{ asset(prd.getImageProduit()) }}"></div>
+                        <div class = "textCentre">{{ prd.getTypeProduit() }}</div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+        <h2 id="fruits">Fruit</h2>
+        <div class="conteneurCategorie flexWrap">
+            {% for prd in Fruit %}
+                <div class="conteneurSimple flexWrap">
+                    <a href="http://localhost:9999/description/{{ prd.getTypeProduit() }}">
+                        <div><img class="imgTailleStand" src="{{ asset(prd.getImageProduit()) }}"></div>
+                        <div class = "textCentre">{{ prd.getTypeProduit() }}</div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+        <h2 id="feculents">Feculent</h2>
+        <div class="conteneurCategorie flexWrap">
+            {% for prd in Feculent %}
+                <div class="conteneurSimple flexWrap">
+                    <a href="http://localhost:9999/description/{{ prd.getTypeProduit() }}">
+                        <div><img class="imgTailleStand" src="{{ asset(prd.getImageProduit()) }}"></div>
+                        <div class = "textCentre">{{ prd.getTypeProduit() }}</div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+        <h2 id="autres">Autre</h2>
+        <div class="conteneurCategorie flexWrap">
+            {% for prd in Autre %}
+                <div class="conteneurSimple flexWrap">
+                    <a href="http://localhost:9999/description/{{ prd.getTypeProduit() }}">
+                        <div><img class="imgTailleStand" src="{{ asset(prd.getImageProduit()) }}"></div>
+                        <div class = "textCentre">{{ prd.getTypeProduit() }}</div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

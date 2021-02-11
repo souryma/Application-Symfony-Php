@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créez votre compte{% endblock %}
+
+{% block body %}
+<div class="conteneurPage">
+    <h2>Entrez vos informations :</h2>
+
+    {{ form(producteur_form) }} <!-- Avec ça on affiche le formulaire créé par le controller -->
+{% endblock %}

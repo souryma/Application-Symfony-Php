@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création d'une variété{% endblock %}
+
+{%  block body %}
+    <div class="conteneurPage">
+        <h2>Entrez les informations sur la variété :</h2>
+
+        {{ form(variete_form) }}
+    </div>
+{% endblock %}

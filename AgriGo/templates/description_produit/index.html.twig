@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Description {{ name }}{% endblock %}
+
+{% block body %}
+
+<div class="conteneurPage">
+    <h1>Agridex</h1>
+    <img class="imgDesc imgCentre" src="{{ asset(produit.getImageProduit()) }}">
+    <h2>{{ name }}</h2>
+    <p>{{ produit.getDescriptionProduit() }}</p>
+
+    <h2>Où l'acheter ?</h2>
+
+    <div class="conteneurVariete flexWrap">
+        {% for var in Variete %}
+            <div class="conteneurInfoVar">
+                <p>{{ var.getNomVariete() }}</p>
+                <img class="imgTailleStand" src="{{ asset(var.getImageVariete()) }}">
+                <p>{{ var.getProducteurVariete.getPrenomProducteur }} {{ var.getProducteurVariete.getNomProducteur }}</p>
+                <p>{{ var.getProducteurVariete.getNumRue }} {{ var.getProducteurVariete.getNomRue }} {{ var.getProducteurVariete.getVilleProducteur }} {{ var.getProducteurVariete.getCodePostal }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="{{ asset('css/app.css')}}">
+    </head>
+    <body>
+
+        <div class="conteneurPage">
+            <div>
+                <a href="http://localhost:9999" >
+                    <img class="imgTailleStand imgCentre" src="{{ asset('img/agrigoLogo.png') }}" alt="logo Agrigo">
+                </a>
+            </div>
+            <div>
+                <a href="http://localhost:9999" class="textCentre textGrand"><p>AgriGo</p></a>
+            </div>
+
+            <div class="menuAccueil flexWrap">
+                <div class="navMenu"><a href="http://localhost:9999/agridex" >AgriDex</a></div>
+                <div class="navMenu"><a href="http://localhost:9999/agrimap" >AgriMap</a></div>
+                <div class="navMenu"><a href="http://localhost:9999/listeProducteurs" >Liste Producteurs</a></div>
+                <div class="navMenu"><a href="http://localhost:9999/creationcompte" >Créer un profil producteur</a></div>
+            </div>
+        </div>
+
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

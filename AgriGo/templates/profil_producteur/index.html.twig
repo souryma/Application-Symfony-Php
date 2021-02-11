@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil {{ producteur.getNomProducteur }} {% endblock %}
+
+{% block body %}
+    <div class="conteneurPage">
+        <div class="conteneurCategorie flexWrap">
+            <div class="infoProducteur">
+                <p>{{ producteur.getPrenomProducteur }} {{ producteur.getNomProducteur }}</p>
+
+                {% if producteur.getNomMagasin is not null %}
+                    <p>{{ producteur.getNomMagasin }}</p>
+                {% endif %}
+
+
+                <p>{{ producteur.getMailProducteur }}</p>
+
+                {% if producteur.getNumTelProducteur is not null %}
+                    <p>{{ producteur.getNumTelProducteur }}</p>
+                {% endif %}
+
+
+            </div>
+            <div class="infoProducteur">
+                {% if producteur.getImageProducteur() is not null %}
+                    <img class="imgProducteur" src="{{ asset(producteur.getImageProducteur()) }}" alt="sa photo">
+                {% endif %}
+            </div>
+
+            <div class="infoProducteur">
+             {{ producteur.getNumRue }} {{ producteur.getNomRue }} {{ producteur.getVilleProducteur }} {{ producteur.getCodePostal }}
+            </div>
+
+            <a href="http://localhost:9999/ajoutVariete" class="textCentre"><p>Ajouter une variété</p></a>
+        </div>
+
+        <h3 class="textCentre">Ses produits :</h3>
+
+        <div class="conteneurVariete flexWrap">
+            {% for variete in varieteProducteur %}
+                <div class="conteneurInfoVar">
+                    <p>{{ variete.getNomVariete() }}</p>
+                    <img class="imgTailleStand" src="{{ asset(variete.getImageVariete()) }}">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
